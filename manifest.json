@@ -1,15 +1,16 @@
 {
     "manifest_version": 3,
-    "name": "My Extension",
+    "name": "SC No-repeat",
     "version": "1.0",
+    "permissions": ["activeTab", "storage", "scripting"],
     "background": {
         "service_worker": "background.js"
     },
-    "permissions": ["activeTab"],
     "content_scripts": [
         {
             "matches": ["*://*.soundcloud.com/*"],
             "js": ["main.js"]
         }
-    ]
+    ],
+    "host_permissions": [ "*://*.soundcloud.com/*" ]
 }
